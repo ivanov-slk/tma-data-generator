@@ -7,9 +7,9 @@ import (
 )
 
 func main() {
-	out, err := mock.JsonizeStaticOutput()
+	ouat, err := mock.JsonizeStaticOutput()
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("%s", out)
+	fmt.Printf("%s", ouat)
 }
