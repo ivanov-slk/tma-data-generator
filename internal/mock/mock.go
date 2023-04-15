@@ -2,7 +2,6 @@ package mock
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 type MockTemperatureStats struct {
@@ -16,10 +15,5 @@ func GetStaticOutput() MockTemperatureStats {
 }
 
 func JsonizeStaticOutput() ([]byte, error) {
-	jsonOutput, err := json.Marshal(GetStaticOutput())
-	if err != nil {
-		fmt.Printf("Error during jsonizing: %s", err)
-		return nil, err
-	}
-	return jsonOutput, nil
+	return json.Marshal(GetStaticOutput())
 }
