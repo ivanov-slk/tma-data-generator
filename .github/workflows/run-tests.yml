@@ -11,7 +11,7 @@ jobs:
     #   GOBIN: ${{ github.workspace }}/bin
     defaults:
       run:
-        working-directory: ${{ env.GOPATH }}/src/pkg/github.com/ivanov-slk/tma-data-generator
+        working-directory: src/pkg/github.com/ivanov-slk/tma-data-generator
     steps:
       - uses: actions/checkout@v3
 
