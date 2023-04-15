@@ -6,9 +6,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      GOPATH: ${{ github.workspace }}
-      GOBIN: ${{ github.workspace }}/bin
+    # env:
+    #   GOPATH: ${{ github.workspace }}
+    #   GOBIN: ${{ github.workspace }}/bin
     defaults:
       run:
         working-directory: ${{ env.GOPATH }}/src/pkg/github.com/ivanov-slk/tma-data-generator
