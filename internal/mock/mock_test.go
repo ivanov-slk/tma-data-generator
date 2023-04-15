@@ -10,8 +10,8 @@ func TestGetStaticOutput(t *testing.T) {
 
 	correct := MockTemperatureStats{15, 0.6, 1000}
 
-	out, err := GetStaticOutput()
-	if !cmp.Equal(out, correct) || err != nil {
-		t.Fail()
+	result, err := GetStaticOutput()
+	if !cmp.Equal(result, correct) || err != nil {
+		t.Errorf("Got: %v, want: %v.", result, correct)
 	}
 }
