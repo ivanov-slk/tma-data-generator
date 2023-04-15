@@ -6,14 +6,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # env:
-    #   GOPATH: ${{ github.workspace }}
-    #   GOBIN: ${{ github.workspace }}/bin
+    env:
+      GOPATH: ${{ github.workspace }}
     defaults:
       run:
-        working-directory: src/pkg/github.com/ivanov-slk/tma-data-generator
+        working-directory: ${{ env.GOPATH }}/src/github.com/${{ github.repository }}
     steps:
       - uses: actions/checkout@v3
+        with:
+          path: ${{ env.GOPATH }}/src/github.com/${{ github.repository }}
 
       - name: Set up Go
         uses: actions/setup-go@v4
