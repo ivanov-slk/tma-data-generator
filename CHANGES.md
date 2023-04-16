@@ -4,6 +4,10 @@
 
 # v0.1.7
 
+### Maintenance
+
+- Opt out for using compound and reusable workflows, as this is much easier to maintain.
+
 ---
 
 # v0.1.6
