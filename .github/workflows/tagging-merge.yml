@@ -34,5 +34,5 @@ jobs:
           git tag -a $CURRENT_TAG -m $CURRENT_COMMIT_ID
           git push --tags --dry-run
 
-      - name: Build container image.
-        uses: ./.github/build-and-publish-image.yml
+  call-build-and-publish-image:
+    uses: ./.github/build-and-publish-image.yml
