@@ -1,6 +1,7 @@
 name: version-tag-merge
 
 on:
+  pull_request:
   push:
     branches: [master]
 
@@ -40,3 +41,4 @@ jobs:
         with:
           github_token: ${{ steps.get_workflow_token.outputs.token }}
           custom_tag: ${{ steps.latest_tag_and_commit_id.outputs.latest_tag }}
+          commit_sha: ${{ steps.latest_tag_and_commit_id.outputs.current_commit_id }}
