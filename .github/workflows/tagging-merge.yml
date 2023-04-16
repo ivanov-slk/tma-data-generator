@@ -35,4 +35,4 @@ jobs:
           git push --tags --dry-run
 
       - name: Build container image.
-        uses: ./.github/build-and-publish-image.yml@master
+        uses: ./.github/build-and-publish-image.yml
