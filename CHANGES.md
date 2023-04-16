@@ -2,6 +2,14 @@
 
 ---
 
+# v0.1.5
+
+### Bugfixes
+
+- Correctly set the github token to be used.
+
+---
+
 # v0.1.4
 
 ### Bugfixes
