@@ -2,6 +2,14 @@
 
 ---
 
+# v0.1.4
+
+### Bugfixes
+
+- Use the correct secret name.
+
+---
+
 # v0.1.3
 
 ### Maintenance
