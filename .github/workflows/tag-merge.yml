@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Get the latest tag and the commit id.
+      - name: Tag and push.
         run: |
           git config --global user.name 'ivanov-slk'
           git config --global user.email 'ivanov-slk@users.noreply.github.com'
