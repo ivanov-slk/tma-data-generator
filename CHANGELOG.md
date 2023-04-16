@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.1](https://github.com/ivanov-slk/tma-data-generator/compare/v0.2.0...v0.2.1) (2023-04-16)
+
+
+### Bug Fixes
+
+* Run tests on pull request. ([3652f81](https://github.com/ivanov-slk/tma-data-generator/commit/3652f819fffcb7a3aab1a7284561e147f5ee822d))
+* Turn off old workflows. ([1e4086d](https://github.com/ivanov-slk/tma-data-generator/commit/1e4086d84ed64681df2c50d405b505d4f7a89f63))
+
 ## [0.2.0](https://github.com/ivanov-slk/tma-data-generator/compare/v0.1.9...v0.2.0) (2023-04-16)
 
 ### Features
