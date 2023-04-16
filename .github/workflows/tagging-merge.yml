@@ -17,18 +17,27 @@ jobs:
           application_private_key: ${{ secrets.APPLICATION_PRIVATE_KEY }}
 
       - uses: actions/checkout@v3
-        with:
-          token: ${{ steps.get_workflow_token.outputs.token }}
 
-      - name: Tag the merge commit.
+      - name: Get the latest tag and the commit id.
+        id: latest_tag_and_commit_id
         run: |
-          git config --global user.name 'tma-bot'
-          git config --global user.email 'tma-bot@users.noreply.github.com'
+          git config --global user.name 'ivanov-slk'
+          git config --global user.email 'ivanov-slk@users.noreply.github.com'
           git fetch
           git checkout $GITHUB_HEAD_REF
 
           CURRENT_TAG="$(echo $(sed '5q;d' CHANGES.md) | sed 's/# //g')"
           CURRENT_COMMIT_ID=$(git rev-parse HEAD)
 
-          git tag -a $CURRENT_TAG -m $CURRENT_COMMIT_ID
-          git push --tags
+          echo "::set-output name=current_tag::${CURRENT_TAG}"
+          echo "::set-output name=current_commit_id::${CURRENT_COMMIT_ID}"
+
+          # git tag -a $CURRENT_TAG -m $CURRENT_COMMIT_ID
+          # git push --tags
+
+      - name: Tag.
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          custom_tag: ${{ steps.latest_tag_and_commit_id.outputs.latest_tag }}
