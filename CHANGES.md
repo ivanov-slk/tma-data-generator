@@ -2,6 +2,14 @@
 
 ---
 
+# v0.1.8
+
+### Bugfixes
+
+- Fetch the latest tag available during the container build steps.
+
+---
+
 # v0.1.7
 
 ### Maintenance
