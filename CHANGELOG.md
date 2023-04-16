@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.2.3](https://github.com/ivanov-slk/tma-data-generator/compare/v0.2.2...v0.2.3) (2023-04-16)
+
+
+### Continuous Integration
+
+* Add prefix 'v-' for image tags. ([274b59e](https://github.com/ivanov-slk/tma-data-generator/commit/274b59ebbc5b796f57f5bfa80163d0e102a8ffe1))
+* Allow calling the container build workflow only when new tags are pushed. ([d7b8c5f](https://github.com/ivanov-slk/tma-data-generator/commit/d7b8c5fc61855285e4ca0d40fc408fd1fe1e75ae))
+* Use the tag from the tag event directly; remove usage of external dependencies for tag fetching. ([a198d30](https://github.com/ivanov-slk/tma-data-generator/commit/a198d30d712a4fae5366417e4b1ae82eb67e6a10))
+
 ## [0.2.2](https://github.com/ivanov-slk/tma-data-generator/compare/v0.2.1...v0.2.2) (2023-04-16)
 
 
