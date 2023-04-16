@@ -35,4 +35,4 @@ jobs:
           git push --tags --dry-run
 
       - name: Build container image.
-        uses: ivanov-slk/tma-data-generator/.github/build-and-publish-image.yml@master
+        uses: ./.github/build-and-publish-image.yml@master
