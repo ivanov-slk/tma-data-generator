@@ -35,4 +35,4 @@ jobs:
           git push --tags --dry-run
 
   call-build-and-publish-image:
-    uses: ./.github/build-and-publish-image.yml
+    uses: ./.github/workflows/build-and-publish-image.yml
