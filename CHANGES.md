@@ -87,5 +87,5 @@
 
 ### New
 
-- Add `main` module returning static output;
+- Add main module returning static output;
 - Add Github actions.
