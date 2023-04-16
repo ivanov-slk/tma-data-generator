@@ -6,7 +6,7 @@ on:
 
 jobs:
   call-tagging-check:
-    uses: ./.github/workflows/tagging-check.yml
+    uses: ./.github/workflows/tag-check.yml
 
   call-run-tests:
     uses: ./.github/workflows/run-tests.yml
