@@ -4,16 +4,23 @@ on:
   push:
     branches: [master]
 
-  workflow_dispatch:
-
 jobs:
   tag:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Get Token
+        id: get_workflow_token
+        uses: ivanov-slk/tma-bot
+        with:
+          application_id: ${{ secrets.APPLICATION_ID }}
+          application_private_key: ${{ secrets.APPLICATION_PRIVATE_KEY }}
+
       - uses: actions/checkout@v3
 
       - name: Tag the merge commit.
+        env:
+          GITHUB_TOKEN: ${{ steps.get_workflow_token.outputs.token }}
         run: |
           git config --global user.name 'ivanov-slk'
           git config --global user.email 'ivanov-slk@users.noreply.github.com'
