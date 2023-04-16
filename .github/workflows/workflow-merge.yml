@@ -1,7 +1,6 @@
 name: workflow-merge
 
 on:
-  pull_request:
   push:
     branches: [master]
   workflow_dispatch:
@@ -15,5 +14,5 @@ jobs:
     uses: ./.github/workflows/tag-merge.yml
 
   call-build-and-publish-image:
-    # if: ${{ success() }}
+    if: ${{ success() }}
     uses: ./.github/workflows/build-and-publish-image.yml
