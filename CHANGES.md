@@ -2,6 +2,14 @@
 
 ---
 
+# v0.1.9
+
+### Bugfixes
+
+- Wait after tag push to ensure tags have reached the repository before the latest is fetched for the container image build.
+
+---
+
 # v0.1.8
 
 ### Bugfixes
