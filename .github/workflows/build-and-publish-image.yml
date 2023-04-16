@@ -3,7 +3,6 @@ name: build-and-publish-image
 on:
   push:
     tags: [v*]
-  workflow_call:
 
 env:
   REGISTRY: ghcr.io
