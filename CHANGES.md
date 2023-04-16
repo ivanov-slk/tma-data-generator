@@ -26,7 +26,7 @@
 
 ### New
 
-- Use `mathieudutour/github-tag-action` for tagging.
+- Use `mathieudutour/github-tag-action` for tag.
 
 ### Bugfixes
 
