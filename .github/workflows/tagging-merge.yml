@@ -20,6 +20,8 @@ jobs:
           application_private_key: ${{ secrets.APPLICATION_PRIVATE_KEY }}
 
       - uses: actions/checkout@v3
+        with:
+          github_token: ${{ steps.get_workflow_token.outputs.token }}
 
       - name: Get the latest tag and the commit id.
         id: latest_tag_and_commit_id
@@ -34,6 +36,9 @@ jobs:
 
           echo "::set-output name=current_tag::${CURRENT_TAG}"
           echo "::set-output name=current_commit_id::${CURRENT_COMMIT_ID}"
+
+          git tag -a $CURRENT_TAG -m $CURRENT_COMMIT_ID
+          git push --tags
 
       - name: Tag.
         id: tag_version
