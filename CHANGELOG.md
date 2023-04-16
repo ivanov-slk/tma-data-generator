@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.2.2](https://github.com/ivanov-slk/tma-data-generator/compare/v0.2.1...v0.2.2) (2023-04-16)
+
+
+### Continuous Integration
+
+* Add more fields for the automatic changelog generation as per the Conventional Changelog. ([b9d7723](https://github.com/ivanov-slk/tma-data-generator/commit/b9d772327daf8a2d7768df97a32015675510999f))
+
+
+### Maintenance
+
+* Delete CHANGES.md in favor of CHANGELOG.md. ([13283d3](https://github.com/ivanov-slk/tma-data-generator/commit/13283d35d8b4e03c2a91d00a37073a021f72d396))
+* Move the unused github actions deprecated. They will be removed in a future version if release-please becomes the main tool for managing tags and releases. ([c909b14](https://github.com/ivanov-slk/tma-data-generator/commit/c909b1441defcf6f455d689638fad0ab1a1ed68d))
+
 ## [0.2.1](https://github.com/ivanov-slk/tma-data-generator/compare/v0.2.0...v0.2.1) (2023-04-16)
 
 
