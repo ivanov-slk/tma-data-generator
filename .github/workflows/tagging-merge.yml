@@ -34,4 +34,4 @@ jobs:
           CURRENT_COMMIT_ID=$(git rev-parse HEAD)
 
           git tag -a $CURRENT_TAG -m $CURRENT_COMMIT_ID
-          git push --tags
+          git push --tags --dry-run
