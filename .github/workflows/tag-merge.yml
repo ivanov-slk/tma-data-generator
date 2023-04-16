@@ -22,3 +22,5 @@ jobs:
 
           git tag -a $CURRENT_TAG -m $CURRENT_COMMIT_ID
           git push --tags
+
+          sleep 5  # Make sure the tag has been pushed before other steps are executed.
