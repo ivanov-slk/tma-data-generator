@@ -33,10 +33,14 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
+      - name: "Get the latest tag"
+        id: latest_tag
+        uses: WyriHaximus/github-action-get-previous-tag@v1
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
           context: .
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ steps.latest_tag.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
