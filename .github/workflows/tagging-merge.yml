@@ -8,20 +8,18 @@ on:
 jobs:
   tag:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
 
     steps:
-      - name: Get Token
-        id: get_workflow_token
-        uses: peter-murray/workflow-application-token-action@v2
-        with:
-          application_id: ${{ secrets.APPLICATION_ID }}
-          application_private_key: ${{ secrets.APPLICATION_PRIVATE_KEY }}
+      # - name: Get Token
+      #   id: get_workflow_token
+      #   uses: peter-murray/workflow-application-token-action@v2
+      #   with:
+      #     application_id: ${{ secrets.APPLICATION_ID }}
+      #     application_private_key: ${{ secrets.APPLICATION_PRIVATE_KEY }}
 
       - uses: actions/checkout@v3
-        with:
-          token: ${{ steps.get_workflow_token.outputs.token }}
+      # with:
+      #   token: ${{ steps.get_workflow_token.outputs.token }}
 
       - name: Get the latest tag and the commit id.
         run: |
@@ -35,3 +33,6 @@ jobs:
 
           git tag -a $CURRENT_TAG -m $CURRENT_COMMIT_ID
           git push --tags --dry-run
+
+      - name: Build container image.
+        uses: ivanov-slk/tma-data-generator/.github/build-and-publish-image.yml
