@@ -1,6 +1,7 @@
 name: version-tag-merge
 
 on:
+  pull_request:
   push:
     branches: [master]
 
