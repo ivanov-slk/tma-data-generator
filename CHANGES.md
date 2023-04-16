@@ -2,6 +2,14 @@
 
 ---
 
+# v0.1.8
+
+### Bugfixes
+
+- Fetch the latest tag available during the container build steps.
+
+---
+
 # v0.1.7
 
 ### Maintenance
@@ -26,7 +34,7 @@
 
 ### New
 
-- Use `mathieudutour/github-tag-action` for tagging.
+- Use `mathieudutour/github-tag-action` for tag.
 
 ### Bugfixes
 

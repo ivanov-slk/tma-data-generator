@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  call-tagging-check:
+  call-tag-check:
     uses: ./.github/workflows/tag-check.yml
 
   call-run-tests:

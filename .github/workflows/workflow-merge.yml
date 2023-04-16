@@ -10,7 +10,9 @@ jobs:
     uses: ./.github/workflows/run-tests.yml
 
   call-tag-merge:
+    if: ${{ success() }}
     uses: ./.github/workflows/tag-merge.yml
 
   call-build-and-publish-image:
+    if: ${{ success() }}
     uses: ./.github/workflows/build-and-publish-image.yml
