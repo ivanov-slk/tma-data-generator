@@ -21,8 +21,8 @@ jobs:
       - name: Get the latest tag and the commit id.
         id: latest_tag_and_commit_id
         run: |
-          git config --global user.name 'tma-bot'
-          git config --global user.email 'tma-bot@users.noreply.github.com'
+          git config --global user.name 'ivanov-slk'
+          git config --global user.email 'ivanov-slk@users.noreply.github.com'
           git fetch
           git checkout $GITHUB_HEAD_REF
 
