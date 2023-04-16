@@ -35,9 +35,9 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=semver,pattern={{major}}.{{minor}}.{{patch}},value=${{ github.ref_name }}
-            type=semver,pattern={{major}}.{{minor}},value=${{ github.ref_name }}
-            type=semver,pattern={{major}},value=${{ github.ref_name }}
+            type=semver,pattern=v{{major}}.{{minor}}.{{patch}},value=${{ github.ref_name }}
+            type=semver,pattern=v{{major}}.{{minor}},value=${{ github.ref_name }}
+            type=semver,pattern=v{{major}},value=${{ github.ref_name }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
