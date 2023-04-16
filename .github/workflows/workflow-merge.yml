@@ -1,0 +1,16 @@
+name: workflow-merge
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  call-run-tests:
+    uses: ./.github/workflows/run-tests.yml
+
+  call-tag-merge:
+    uses: ./.github/workflows/tag-merge.yml
+
+  call-build-and-publish-image:
+    uses: ./.github/workflows/build-and-publish-image.yml

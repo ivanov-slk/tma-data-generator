@@ -1,12 +1,10 @@
-name: version-tag-check
+name: tag-check
 
 on:
-  pull_request:
-
-  workflow_dispatch:
+  workflow_call:
 
 jobs:
-  tag:
+  tag-check:
     runs-on: ubuntu-latest
 
     steps:

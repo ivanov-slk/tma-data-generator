@@ -1,0 +1,12 @@
+name: workflow-pull-request
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  call-tagging-check:
+    uses: ./.github/workflows/tagging-check.yml
+
+  call-run-tests:
+    uses: ./.github/workflows/run-tests.yml

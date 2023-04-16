@@ -1,11 +1,10 @@
-name: version-tag-merge
+name: tag-merge
 
 on:
-  push:
-    branches: [master]
+  workflow_call:
 
 jobs:
-  tag:
+  tag-merge:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,7 +21,4 @@ jobs:
           CURRENT_COMMIT_ID=$(git rev-parse HEAD)
 
           git tag -a $CURRENT_TAG -m $CURRENT_COMMIT_ID
-          git push --tags --dry-run
-
-  call-build-and-publish-image:
-    uses: ./.github/workflows/build-and-publish-image.yml
+          git push --tags
