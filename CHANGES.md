@@ -2,7 +2,23 @@
 
 ---
 
+# v0.1.6
+
+### Bugfixes
+
+- Configure the tag action to use the correct token
+
+### Maintenance
+
+- Remove some unneeded code.
+
+---
+
 # v0.1.5
+
+### New
+
+- Use `mathieudutour/github-tag-action` for tagging.
 
 ### Bugfixes
 
