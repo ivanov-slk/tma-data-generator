@@ -2,6 +2,14 @@
 
 ---
 
+# v0.1.3
+
+### Maintenance
+
+- Use the correct action for fetching the Github application token.
+
+---
+
 # v0.1.2
 
 ### Maintenance
