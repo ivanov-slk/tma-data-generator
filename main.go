@@ -1,15 +1,9 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/ivanov-slk/tma-data-generator/internal/mock"
+	"log"
 )
 
 func main() {
-	out, err := mock.JsonizeStaticOutput()
-	if err != nil {
-		panic(err)
-	}
-	fmt.Printf("%s", out)
+	log.Fatal("Not implemented.")
 }
