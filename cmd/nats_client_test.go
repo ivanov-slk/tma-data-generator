@@ -15,13 +15,13 @@ func TestNatsClient(t *testing.T) {
 	}
 
 	ctx := context.Background()
-	natsContainer, cleanupFunc, err := nats_server.RunContainer(ctx)
+	natsServer, cleanupFunc, err := nats_server.RunContainer(ctx)
 	if err != nil {
 		t.Fatalf("could not initalize nats server: %s", err)
 	}
 	defer cleanupFunc()
 
-	driver := nats_client.DataGenerator{NatsServer: natsContainer}
+	driver := nats_client.DataGenerator{NatsServer: natsServer}
 	specifications.GenerateDataSpecification(t, &driver)
 
 }
