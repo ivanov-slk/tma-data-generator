@@ -6,6 +6,7 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"testing"
 
 	"github.com/testcontainers/testcontainers-go"
 	"github.com/testcontainers/testcontainers-go/wait"
@@ -18,7 +19,9 @@ type NatsContainer struct {
 }
 
 // RunContainer creates an instance of the nats container type
-func RunContainer(ctx context.Context, opts ...testcontainers.ContainerCustomizer) (*NatsContainer, func(), error) {
+func RunContainer(t testing.TB, ctx context.Context, opts ...testcontainers.ContainerCustomizer) (*NatsContainer, func(), error) {
+	t.Helper()
+
 	req := testcontainers.ContainerRequest{
 		Image:        "nats:latest",
 		Hostname:     "127.0.0.1",

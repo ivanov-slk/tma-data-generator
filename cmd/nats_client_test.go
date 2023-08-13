@@ -15,7 +15,7 @@ func TestNatsClient(t *testing.T) {
 	}
 
 	ctx := context.Background()
-	natsServer, cleanupFunc, err := nats_server.RunContainer(ctx)
+	natsServer, cleanupFunc, err := nats_server.RunContainer(t, ctx)
 	if err != nil {
 		t.Fatalf("could not initalize nats server: %s", err)
 	}
