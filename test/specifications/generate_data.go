@@ -9,6 +9,7 @@ type DataGenerator interface {
 	GenerateData() ([]byte, error)
 }
 
+// GenerateDataSpecification tests the domain specification of the data generator.
 func GenerateDataSpecification(t testing.TB, dg DataGenerator) {
 	got, err := dg.GenerateData()
 
