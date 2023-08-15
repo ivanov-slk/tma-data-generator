@@ -1,17 +1,12 @@
 FROM golang:latest
 
-# Set destination for COPY
 WORKDIR /app
 
-# Download Go modules
 COPY go.mod go.sum ./
 RUN go mod download
 
-# Copy the source code.
 COPY . .
 
-# Build
-RUN CGO_ENABLED=0 GOOS=linux go build ./cmd -o /run
+RUN CGO_ENABLED=0 GOOS=linux go build -C cmd -o data_generator_nats
 
-# Run
-CMD ["/run"]
+CMD ["./cmd/data_generator_nats"]
