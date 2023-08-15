@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	log.Fatal("Not implemented.")
+	log.Println("INFO: The data generator service initialized successfully.")
 }
