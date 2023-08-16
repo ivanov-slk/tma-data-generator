@@ -18,8 +18,8 @@ type NatsContainer struct {
 	URI string
 }
 
-// RunContainer creates an instance of the nats container type
-func RunContainer(t testing.TB, ctx context.Context, opts ...testcontainers.ContainerCustomizer) (*NatsContainer, func(), error) {
+// RunNATSContainer creates an instance of the nats container type
+func RunNATSContainer(t testing.TB, ctx context.Context, opts ...testcontainers.ContainerCustomizer) (*NatsContainer, func(), error) {
 	t.Helper()
 
 	req := testcontainers.ContainerRequest{

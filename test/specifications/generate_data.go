@@ -5,6 +5,8 @@ import (
 	"testing"
 )
 
+// DataGenerator mimics the domain interface for generating data for use in tests.
+// TODO: consider using the domain interface directly and removing this one.
 type DataGenerator interface {
 	GenerateData() ([]byte, error)
 }

@@ -9,10 +9,10 @@ import (
 	"github.com/testcontainers/testcontainers-go/wait"
 )
 
-// StartSUTContainer creates a container of the data generator service
+// RunSUTContainer creates a container of the data generator service
 // from its Dockerfile and starts it. It is a test helper using a
 // shared context.
-func StartSUTContainer(t testing.TB, ctx context.Context) (*testcontainers.Container, func(), error) {
+func RunSUTContainer(t testing.TB, ctx context.Context) (*testcontainers.Container, func(), error) {
 	t.Helper()
 	log.Println("1")
 	req := testcontainers.ContainerRequest{

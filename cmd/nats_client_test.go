@@ -16,13 +16,13 @@ func TestNatsClient(t *testing.T) {
 	}
 
 	ctx := context.Background()
-	natsServer, natsCleanup, err := nats_server.RunContainer(t, ctx)
+	natsServer, natsCleanup, err := nats_server.RunNATSContainer(t, ctx)
 	if err != nil {
 		t.Fatalf("could not initalize nats server: %s", err)
 	}
 	defer natsCleanup()
 
-	sut, sutCleanup, err := adapters.StartSUTContainer(t, ctx)
+	sut, sutCleanup, err := adapters.RunSUTContainer(t, ctx)
 	if err != nil {
 		t.Fatalf("could not initialize sut: %s", err)
 	}
