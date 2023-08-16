@@ -34,13 +34,13 @@ func (dg *DataGenerator) GenerateData() ([]byte, error) {
 	// add stream to nats
 	if _, err = js.AddStream(&nats.StreamConfig{
 		Name:     "test-data-generator",
-		Subjects: []string{"data-generator-subject"},
+		Subjects: []string{"generated-data"},
 	}); err != nil {
 		log.Fatalf("failed to add stream: %s", err)
 	}
 
 	// add subscriber to nats
-	sub, err := js.SubscribeSync("data-generator-subject", nats.Durable("worker"))
+	sub, err := js.SubscribeSync("generated-data", nats.Durable("worker"))
 	if err != nil {
 		log.Fatalf("failed to subscribe to hello: %s", err)
 	}
