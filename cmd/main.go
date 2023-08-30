@@ -15,6 +15,8 @@ func main() {
 	if !found {
 		log.Fatal("NATS server URI not set.")
 	}
+
+	log.Printf("INFO: Will connect to NATS server at %s\n", natsURI)
 	nc, err := nats.Connect(natsURI)
 	if err != nil {
 		log.Fatalf("failed to connect to nats server: %s", err)
