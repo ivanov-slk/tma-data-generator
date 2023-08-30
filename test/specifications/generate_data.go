@@ -19,7 +19,7 @@ func GenerateDataSpecification(t testing.TB, dg DataGenerator) {
 		t.Fatalf("could not generate data: %s", err)
 	}
 
-	want := []byte{1}
+	want := []byte("hello message")
 	if !bytes.Equal(got, want) {
 		t.Errorf("wrong output, got %v, want %v", got, want)
 	}
