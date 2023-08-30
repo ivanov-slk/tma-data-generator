@@ -2,7 +2,6 @@ package main_test
 
 import (
 	"context"
-	"strings"
 	"testing"
 
 	"github.com/ivanov-slk/tma-data-generator/internal/adapters"
@@ -26,7 +25,8 @@ func TestNatsClient(t *testing.T) {
 	defer natsCleanup()
 
 	// TODO: this is a test driver's job
-	sut, sutCleanup, err := adapters.RunSUTContainer(t, ctx, strings.Replace(natsServer.URI, "localhost", "localhost", 1))
+	// sut, sutCleanup, err := adapters.RunSUTContainer(t, ctx, strings.Replace(natsServer.URI, "localhost", "host.containers.internal", 1))
+	sut, sutCleanup, err := adapters.RunSUTContainer(t, ctx, natsServer.URI)
 	if err != nil {
 		t.Fatalf("could not initialize sut: %s", err)
 	}
