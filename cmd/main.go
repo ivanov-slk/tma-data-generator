@@ -17,7 +17,7 @@ func main() {
 	}
 	nc, err := nats.Connect(natsURI)
 	if err != nil {
-		log.Fatalf("failed to connect to nats: %s", err)
+		log.Fatalf("failed to connect to nats server: %s", err)
 	}
 	defer nc.Close()
 
