@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Add hosts to /etc/hosts
+      - name: Add container host for DNS
         run: |
           sudo echo "127.0.0.1 host.containers.internal" | sudo tee -a /etc/hosts
 
