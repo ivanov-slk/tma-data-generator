@@ -34,7 +34,7 @@ func RunSUTContainer(t testing.TB, ctx context.Context, natsServerURI string) (*
 	}
 
 	sut, err := testcontainers.GenericContainer(ctx, testcontainers.GenericContainerRequest{
-		ProviderType:     testcontainers.ProviderPodman,
+		ProviderType:     testcontainers.ProviderDocker,
 		ContainerRequest: req,
 		Started:          true,
 	})

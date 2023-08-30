@@ -39,7 +39,7 @@ func RunNATSContainer(t testing.TB, ctx context.Context, opts ...testcontainers.
 	}
 
 	genericContainerReq := testcontainers.GenericContainerRequest{
-		ProviderType:     testcontainers.ProviderPodman,
+		ProviderType:     testcontainers.ProviderDocker,
 		ContainerRequest: req,
 		Started:          true,
 	}
