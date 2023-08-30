@@ -34,23 +34,14 @@ func (dg *DataGenerator) GenerateData() ([]byte, error) {
 		Subjects: []string{"generated-data"},
 	})
 
-	// s, _ := js.Stream(ctx, "TESTSTREAM")
-	fmt.Printf("\n\n=================================%v", s)
-
-	js.Publish(ctx, "generated-data", []byte("hello message"))
-	fmt.Printf("Published hello message\n")
-
 	c, _ := s.CreateOrUpdateConsumer(ctx, jetstream.ConsumerConfig{
 		Durable:   "TESTCONSUMER",
 		AckPolicy: jetstream.AckExplicitPolicy,
 	})
 
 	msgs, _ := c.Fetch(1)
-	fmt.Printf("\n\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>%v\n\n", msgs)
 	for msg := range msgs.Messages() {
-		fmt.Printf("\n\n=================================%v", msg)
 		msg.Ack()
-		fmt.Printf("Received a JetStream message via fetch: %s\n", string(msg.Data()))
 		return msg.Data(), nil
 	}
 	if msgs.Error() != nil {

@@ -12,7 +12,6 @@ import (
 func main() {
 	log.Println("INFO: Initializing the data generator service...")
 	natsURI, found := os.LookupEnv("NATS_SERVER_URI")
-	log.Printf("\n\n\n nnnnnnats uri: %s\n===\n", natsURI)
 	if !found {
 		log.Fatal("NATS server URI not set.")
 	}
@@ -25,7 +24,6 @@ func main() {
 	ctx := context.Background()
 
 	js, _ := jetstream.New(nc)
-	log.Println("INFO: Created new jetstream instance.")
 
 	js.CreateStream(ctx, jetstream.StreamConfig{
 		Name:     "TESTSTREAM",
