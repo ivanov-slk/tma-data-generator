@@ -8,6 +8,7 @@ import (
 	"log"
 	"testing"
 
+	"github.com/docker/docker/api/types/container"
 	"github.com/testcontainers/testcontainers-go"
 	"github.com/testcontainers/testcontainers-go/wait"
 )
@@ -31,15 +32,18 @@ func RunNATSContainer(t testing.TB, ctx context.Context, opts ...testcontainers.
 	t.Helper()
 
 	req := testcontainers.ContainerRequest{
-		Image:        "nats:alpine",
-		Hostname:     "127.0.0.1",
+		Image:    "nats:alpine",
+		Hostname: "127.0.0.1",
+		HostConfigModifier: func(hc *container.HostConfig) {
+			hc.NetworkMode = "host"
+		},
 		ExposedPorts: []string{"4222/tcp", "6222/tcp", "8222/tcp"},
 		Cmd:          []string{"-DV", "-js"},
 		WaitingFor:   wait.ForLog("Listening for client connections on 0.0.0.0:4222"),
 	}
 
 	genericContainerReq := testcontainers.GenericContainerRequest{
-		ProviderType:     testcontainers.ProviderDocker,
+		ProviderType:     testcontainers.ProviderPodman,
 		ContainerRequest: req,
 		Started:          true,
 	}
