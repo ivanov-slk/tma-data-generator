@@ -8,7 +8,6 @@ import (
 	"log"
 	"testing"
 
-	"github.com/docker/docker/api/types/container"
 	"github.com/testcontainers/testcontainers-go"
 	"github.com/testcontainers/testcontainers-go/wait"
 )
@@ -34,8 +33,14 @@ func RunNATSContainer(t testing.TB, ctx context.Context, opts ...testcontainers.
 	req := testcontainers.ContainerRequest{
 		Image:    "nats:alpine",
 		Hostname: "127.0.0.1",
-		HostConfigModifier: func(hc *container.HostConfig) {
-			hc.NetworkMode = "slirp4netns"
+		// HostConfigModifier: func(hc *container.HostConfig) {
+		// 	hc.NetworkMode = "slirp4netns"
+		// },
+		Networks: []string{
+			"ttt",
+		},
+		NetworkAliases: map[string][]string{
+			"ttt": {"nats-server"},
 		},
 		ExposedPorts: []string{"4222/tcp", "6222/tcp", "8222/tcp"},
 		Cmd:          []string{"-DV", "-js"},
@@ -43,7 +48,6 @@ func RunNATSContainer(t testing.TB, ctx context.Context, opts ...testcontainers.
 	}
 
 	genericContainerReq := testcontainers.GenericContainerRequest{
-		ProviderType:     testcontainers.ProviderPodman,
 		ContainerRequest: req,
 		Started:          true,
 	}

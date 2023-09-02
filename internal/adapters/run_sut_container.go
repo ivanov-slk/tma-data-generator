@@ -4,7 +4,6 @@ import (
 	"context"
 	"testing"
 
-	"github.com/docker/docker/api/types/container"
 	testcontainers "github.com/testcontainers/testcontainers-go"
 	"github.com/testcontainers/testcontainers-go/wait"
 )
@@ -31,14 +30,19 @@ func RunSUTContainer(t testing.TB, ctx context.Context, natsServerURI string) (*
 		Env: map[string]string{
 			"NATS_SERVER_URI": natsServerURI,
 		},
-		HostConfigModifier: func(hc *container.HostConfig) {
-			hc.NetworkMode = "slirp4netns"
+		// HostConfigModifier: func(hc *container.HostConfig) {
+		// 	hc.NetworkMode = "slirp4netns"
+		// },
+		Networks: []string{
+			"ttt",
+		},
+		NetworkAliases: map[string][]string{
+			"ttt": {"data-generator"},
 		},
 		WaitingFor: wait.ForLog("INFO: The data generator service initialized successfully."),
 	}
 
 	sut, err := testcontainers.GenericContainer(ctx, testcontainers.GenericContainerRequest{
-		ProviderType:     testcontainers.ProviderPodman,
 		ContainerRequest: req,
 		Started:          true,
 	})
