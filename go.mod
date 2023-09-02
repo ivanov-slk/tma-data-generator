@@ -2,14 +2,20 @@ module github.com/ivanov-slk/tma-data-generator
 
 go 1.20
 
-require github.com/testcontainers/testcontainers-go v0.22.0
+require (
+	github.com/stretchr/testify v1.8.4
+	github.com/testcontainers/testcontainers-go v0.22.0
+)
 
 require (
+	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/nats-io/nats-server/v2 v2.9.21 // indirect
 	github.com/nats-io/nkeys v0.4.4 // indirect
 	github.com/nats-io/nuid v1.0.1 // indirect
+	github.com/pmezard/go-difflib v1.0.0 // indirect
 	golang.org/x/crypto v0.11.0 // indirect
 	golang.org/x/text v0.11.0 // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
 require (
@@ -20,7 +26,7 @@ require (
 	github.com/containerd/containerd v1.7.3 // indirect
 	github.com/cpuguy83/dockercfg v0.3.1 // indirect
 	github.com/docker/distribution v2.8.2+incompatible // indirect
-	github.com/docker/docker v24.0.5+incompatible
+	github.com/docker/docker v24.0.5+incompatible // indirect
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-units v0.5.0 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
