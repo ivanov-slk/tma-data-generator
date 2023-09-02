@@ -35,7 +35,7 @@ func RunNATSContainer(t testing.TB, ctx context.Context, opts ...testcontainers.
 		Image:    "nats:alpine",
 		Hostname: "127.0.0.1",
 		HostConfigModifier: func(hc *container.HostConfig) {
-			hc.NetworkMode = "host"
+			hc.NetworkMode = "slirp4netns"
 		},
 		ExposedPorts: []string{"4222/tcp", "6222/tcp", "8222/tcp"},
 		Cmd:          []string{"-DV", "-js"},
