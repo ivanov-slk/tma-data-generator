@@ -32,7 +32,7 @@ func RunSUTContainer(t testing.TB, ctx context.Context, natsServerURI string) (*
 			"NATS_SERVER_URI": natsServerURI,
 		},
 		HostConfigModifier: func(hc *container.HostConfig) {
-			hc.NetworkMode = "host"
+			hc.NetworkMode = "slirp4netns"
 		},
 		WaitingFor: wait.ForLog("INFO: The data generator service initialized successfully."),
 	}
