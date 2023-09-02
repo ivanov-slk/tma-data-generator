@@ -1,5 +1,33 @@
 # Changelog
 
+## [0.2.4](https://github.com/ivanov-slk/tma-data-generator/compare/v0.2.3...v0.2.4) (2023-09-02)
+
+
+### Builds
+
+* Dockerfile builds the main file in 'cmd'. ([ee74ac2](https://github.com/ivanov-slk/tma-data-generator/commit/ee74ac2939320d4b2ec61b3f3889f60ffbfee95f))
+
+
+### Continuous Integration
+
+* Do not run 'tests' action on PR changes, as PR-s are expected to be made only by release-please for documentation purposes. Track status of the main branch instead. ([58c9849](https://github.com/ivanov-slk/tma-data-generator/commit/58c98499e37d16ae18d485b86230f9cd3709ad4e))
+
+
+### Bug Fixes
+
+* Add correct executable path in the dockerfile. ([f8bd367](https://github.com/ivanov-slk/tma-data-generator/commit/f8bd3678e42beb78332494c6b1fa726c244de71e))
+
+
+### Refactoring/Restructuring
+
+* Acceptance test structure follows the DSL-driver model. ([ae56014](https://github.com/ivanov-slk/tma-data-generator/commit/ae56014650dd40a241989595701a175daaecdfdf))
+* Delete directory 'mock', as not needed anymore. ([50870e8](https://github.com/ivanov-slk/tma-data-generator/commit/50870e883581d018706e9a1363579ad807cd8bf5))
+
+
+### Testing
+
+* Add a baseline acceptance test for the service. ([60b0ad7](https://github.com/ivanov-slk/tma-data-generator/commit/60b0ad7c4cd618e33c37c8c4bb26a24faa7fd2f4))
+
 ## [0.2.3](https://github.com/ivanov-slk/tma-data-generator/compare/v0.2.2...v0.2.3) (2023-04-16)
 
 
