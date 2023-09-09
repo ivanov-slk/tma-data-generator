@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.5](https://github.com/ivanov-slk/tma-data-generator/compare/v0.2.4...v0.2.5) (2023-09-07)
+
+
+### Maintenance
+
+* Add log mode to error messages. ([07619b8](https://github.com/ivanov-slk/tma-data-generator/commit/07619b8568f2617db148565de14a37f2e65adf31))
+
+
+### Bug Fixes
+
+* Set connect timeout to nats.Connect(). ([5241b9a](https://github.com/ivanov-slk/tma-data-generator/commit/5241b9a65154bbc13d8da33f4f0afc46c69ce97a))
+
 ## [0.2.4](https://github.com/ivanov-slk/tma-data-generator/compare/v0.2.3...v0.2.4) (2023-09-02)
 
 
