@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.6](https://github.com/ivanov-slk/tma-data-generator/compare/v0.2.5...v0.2.6) (2023-09-09)
+
+
+### Maintenance
+
+* Log nats options for debug purposes. ([de78122](https://github.com/ivanov-slk/tma-data-generator/commit/de781229bfdb3dd0d02e8d0d0402da785add7fa0))
+
 ## [0.2.5](https://github.com/ivanov-slk/tma-data-generator/compare/v0.2.4...v0.2.5) (2023-09-07)
 
 
