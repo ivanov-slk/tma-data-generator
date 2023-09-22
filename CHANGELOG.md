@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.7](https://github.com/ivanov-slk/tma-data-generator/compare/v0.2.6...v0.2.7) (2023-09-10)
+
+
+### Maintenance
+
+* Increase NATS connection timeout to 20 seconds to take into account any Linkerd-related timeouts. ([1a740e2](https://github.com/ivanov-slk/tma-data-generator/commit/1a740e21fcd107b96a6dbc2ae50c51140d5db7bc))
+
 ## [0.2.6](https://github.com/ivanov-slk/tma-data-generator/compare/v0.2.5...v0.2.6) (2023-09-09)
 
 
