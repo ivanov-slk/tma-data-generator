@@ -30,7 +30,7 @@ func (dg *DataGenerator) GenerateData() ([]byte, error) {
 	js, _ := jetstream.New(nc)
 
 	s, _ := js.CreateStream(ctx, jetstream.StreamConfig{
-		Name:     "TESTSTREAM",
+		Name:     "TMA",
 		Subjects: []string{"generated-data"},
 	})
 

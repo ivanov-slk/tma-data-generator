@@ -30,7 +30,7 @@ func main() {
 	js, _ := jetstream.New(nc)
 
 	js.CreateStream(ctx, jetstream.StreamConfig{
-		Name:     "TESTSTREAM",
+		Name:     "TMA",
 		Subjects: []string{"generated-data"},
 	})
 	log.Println("INFO: The data generator service initialized successfully.")
