@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.0](https://github.com/ivanov-slk/tma-data-generator/compare/v0.2.7...v1.0.0) (2023-09-22)
+
+
+### Maintenance
+
+* Leave nats.Connect() with default settings, as they suffice for the existing functionalities. ([83613e1](https://github.com/ivanov-slk/tma-data-generator/commit/83613e1fe8345605df97972840018869ab49d440))
+* release 1.0.0 ([4569bae](https://github.com/ivanov-slk/tma-data-generator/commit/4569bae62877acb747217cf6b0cd6861c84e9559))
+
 ## [0.2.7](https://github.com/ivanov-slk/tma-data-generator/compare/v0.2.6...v0.2.7) (2023-09-10)
 
 
