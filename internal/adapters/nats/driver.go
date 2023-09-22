@@ -35,7 +35,7 @@ func (dg *DataGenerator) GenerateData() ([]byte, error) {
 	})
 
 	c, _ := s.CreateOrUpdateConsumer(ctx, jetstream.ConsumerConfig{
-		Durable:   "TESTCONSUMER",
+		Durable:   "TMADataGenerator",
 		AckPolicy: jetstream.AckExplicitPolicy,
 	})
 
