@@ -4,7 +4,6 @@ import (
 	"context"
 	"log"
 	"os"
-	"time"
 
 	"github.com/nats-io/nats.go"
 	"github.com/nats-io/nats.go/jetstream"
@@ -20,7 +19,7 @@ func main() {
 	opts := nats.GetDefaultOptions()
 	log.Printf("DEBUG: Will use the following options: %v", opts)
 	log.Printf("DEBUG: Will connect to NATS server at %s\n", natsURI)
-	nc, err := nats.Connect(natsURI, nats.Timeout(20*time.Second))
+	nc, err := nats.Connect(natsURI)
 	if err != nil {
 		log.Fatalf("ERROR: failed to connect to nats server: %s", err)
 	}
