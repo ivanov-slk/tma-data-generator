@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/ivanov-slk/tma-data-generator/compare/v1.0.0...v1.0.1) (2023-09-22)
+
+
+### Testing
+
+* After the message is produced sleep the main process forever to make ArgoCD happy. ([6c5d30e](https://github.com/ivanov-slk/tma-data-generator/commit/6c5d30e040043d96939ec1657c9f18ed5885a961))
+
 ## [1.0.0](https://github.com/ivanov-slk/tma-data-generator/compare/v0.2.7...v1.0.0) (2023-09-22)
 
 
