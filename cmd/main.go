@@ -37,4 +37,7 @@ func main() {
 
 	js.Publish(ctx, "generated-data", []byte("hello message"))
 	log.Println("INFO: Message produced.")
+
+	// Sleep forever to make ArgoCD happy.
+	select {}
 }
