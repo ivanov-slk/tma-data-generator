@@ -21,7 +21,7 @@ func TestNatsClient(t *testing.T) {
 
 	// Create network for the containers
 	// aliases := []string{"alias1", "alias2", "alias3"}
-	networkName := "ttt"
+	networkName := "test-network"
 	newNetwork, err := testcontainers.GenericNetwork(ctx, testcontainers.GenericNetworkRequest{
 		NetworkRequest: testcontainers.NetworkRequest{
 			Name:           networkName,

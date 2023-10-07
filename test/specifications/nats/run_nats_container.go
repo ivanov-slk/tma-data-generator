@@ -12,14 +12,6 @@ import (
 	"github.com/testcontainers/testcontainers-go/wait"
 )
 
-// type TestLogConsumer1 struct {
-// 	Msgs []string
-// }
-
-// func (g *TestLogConsumer1) Accept(l testcontainers.Log) {
-// 	g.Msgs = append(g.Msgs, string(l.Content))
-// }
-
 // NatsContainer represents the nats container type used in the module
 type NatsContainer struct {
 	testcontainers.Container
@@ -33,14 +25,11 @@ func RunNATSContainer(t testing.TB, ctx context.Context, opts ...testcontainers.
 	req := testcontainers.ContainerRequest{
 		Image:    "nats:alpine",
 		Hostname: "127.0.0.1",
-		// HostConfigModifier: func(hc *container.HostConfig) {
-		// 	hc.NetworkMode = "slirp4netns"
-		// },
 		Networks: []string{
-			"ttt",
+			"test-network",
 		},
 		NetworkAliases: map[string][]string{
-			"ttt": {"nats-server"},
+			"test-network": {"nats-server"},
 		},
 		ExposedPorts: []string{"4222/tcp", "6222/tcp", "8222/tcp"},
 		Cmd:          []string{"-DV", "-js"},

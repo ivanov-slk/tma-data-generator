@@ -8,14 +8,6 @@ import (
 	"github.com/testcontainers/testcontainers-go/wait"
 )
 
-// type TestLogConsumer struct {
-// 	Msgs []string
-// }
-
-// func (g *TestLogConsumer) Accept(l testcontainers.Log) {
-// 	g.Msgs = append(g.Msgs, string(l.Content))
-// }
-
 // RunSUTContainer creates a container of the data generator service
 // from its Dockerfile and starts it. It is a test helper using a
 // shared context.
@@ -30,14 +22,11 @@ func RunSUTContainer(t testing.TB, ctx context.Context, natsServerURI string) (*
 		Env: map[string]string{
 			"NATS_SERVER_URI": natsServerURI,
 		},
-		// HostConfigModifier: func(hc *container.HostConfig) {
-		// 	hc.NetworkMode = "slirp4netns"
-		// },
 		Networks: []string{
-			"ttt",
+			"test-network",
 		},
 		NetworkAliases: map[string][]string{
-			"ttt": {"data-generator"},
+			"test-network": {"data-generator"},
 		},
 		WaitingFor: wait.ForLog("INFO: The data generator service initialized successfully."),
 	}
