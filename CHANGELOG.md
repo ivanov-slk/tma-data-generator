@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.1.1](https://github.com/ivanov-slk/tma-data-generator/compare/v1.1.0...v1.1.1) (2024-01-03)
+
+
+### Documentation
+
+* Remove references to Kafka, as the service does not use it right now and generally will not be constrained to a specific pub/sub provider. ([191e737](https://github.com/ivanov-slk/tma-data-generator/commit/191e737bd6f1e962421f7df951e09bada64df0c7))
+
+
+### Refactoring/Restructuring
+
+* Make the  package public. ([97cb625](https://github.com/ivanov-slk/tma-data-generator/commit/97cb6251dce2d31d9917668d59006b1518ee6174))
+* Make the data generator utilities public. ([9239145](https://github.com/ivanov-slk/tma-data-generator/commit/92391452dc6f473e7f52b999ba4aedd0b5ee217c))
+
+
+### Testing
+
+* Fix typos in the datetimes used for testing. ([f347299](https://github.com/ivanov-slk/tma-data-generator/commit/f34729912c61ce6167bfd2cd89ab8a8d7a30bdb5))
+
 ## [1.1.0](https://github.com/ivanov-slk/tma-data-generator/compare/v1.0.1...v1.1.0) (2024-01-03)
 
 ### Features
