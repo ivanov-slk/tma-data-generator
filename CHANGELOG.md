@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://github.com/ivanov-slk/tma-data-generator/compare/v1.0.1...v1.1.0) (2024-01-03)
+
+
+### Features
+
+* Add object representing a temperature stats event and a static output as a working example. ([f1f40f0](https://github.com/ivanov-slk/tma-data-generator/commit/f1f40f0fbeb400e59185d8fb0668314bedcec37f))
+* Output the hard-coded TemperatureStats object to NATS. ([7c86bb0](https://github.com/ivanov-slk/tma-data-generator/commit/7c86bb0a432e534e3719f8f9bf484b919fd0b2cd))
+
+
+### Refactoring/Restructuring
+
+* Remove unused code related to testcontainers logging. ([fa3cf09](https://github.com/ivanov-slk/tma-data-generator/commit/fa3cf090f34537e46be8c306fafcf095ce883564))
+
 ## [1.0.1](https://github.com/ivanov-slk/tma-data-generator/compare/v1.0.0...v1.0.1) (2023-09-22)
 
 
