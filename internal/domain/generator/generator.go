@@ -18,6 +18,6 @@ func Generate() TemperatureStats {
 	return TemperatureStats{15, 0.6, 1000, timestamp, "1"}
 }
 
-func JsonizeTemperatureStats() ([]byte, error) {
-	return json.Marshal(Generate())
+func JsonizeTemperatureStats(stats TemperatureStats) ([]byte, error) {
+	return json.Marshal(stats)
 }

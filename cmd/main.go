@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/ivanov-slk/tma-data-generator/internal/domain/generator"
 	"github.com/nats-io/nats.go"
 	"github.com/nats-io/nats.go/jetstream"
 )
@@ -35,7 +36,9 @@ func main() {
 	})
 	log.Println("INFO: The data generator service initialized successfully.")
 
-	js.Publish(ctx, "generated-data", []byte("hello message"))
+	byteStats, _ := generator.JsonizeTemperatureStats(generator.Generate()) // TODO error handling
+
+	js.Publish(ctx, "generated-data", byteStats)
 	log.Println("INFO: Message produced.")
 
 	// Sleep forever to make ArgoCD happy.

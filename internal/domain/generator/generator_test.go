@@ -19,7 +19,7 @@ func TestGenerate(t *testing.T) {
 
 func TestJsonizeTemperatureStats(t *testing.T) {
 	correct := []byte("{\"temperature\":15,\"humidity\":0.6,\"pressure\":1000,\"datetime\":\"0001-01-01T00:00:00Z\",\"id\":\"1\"}")
-	result, err := JsonizeTemperatureStats()
+	result, err := JsonizeTemperatureStats(Generate())
 	if err != nil {
 		t.Errorf("Error during testing: %s", err)
 	}
