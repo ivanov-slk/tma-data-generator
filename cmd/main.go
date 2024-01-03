@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/ivanov-slk/tma-data-generator/internal/domain/generator"
+	"github.com/ivanov-slk/tma-data-generator/internal/domain/generator" // TODO move to `pkd`, this is not internal anymore?
 	"github.com/nats-io/nats.go"
 	"github.com/nats-io/nats.go/jetstream"
 )
