@@ -19,7 +19,7 @@ func GenerateDataSpecification(t testing.TB, dg DataGenerator) {
 		t.Fatalf("could not generate data: %s", err)
 	}
 
-	want := []byte("{\"temperature\":15,\"humidity\":0.6,\"pressure\":1000,\"datetime\":\"0001-01-01T00:00:00Z\",\"id\":\"1\"}") // TODO validate that output is parsable as TemperatureStats instead of hassling with strings
+	want := []byte("{\"temperature\":15,\"humidity\":0.6,\"pressure\":1000,\"datetime\":\"2024-01-04T16:27:40Z\",\"id\":\"1\"}") // TODO validate that output is parsable as TemperatureStats instead of hassling with strings
 	if !bytes.Equal(got, want) {
 		t.Errorf("wrong output, got %v, want %v", got, want)
 	}
