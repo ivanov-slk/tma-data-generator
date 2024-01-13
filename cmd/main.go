@@ -33,6 +33,7 @@ func main() {
 	js.CreateStream(ctx, jetstream.StreamConfig{
 		Name:     "TMA",
 		Subjects: []string{"generated-data"},
+		Storage:  jetstream.MemoryStorage,
 	})
 	log.Println("INFO: The data generator service initialized successfully.")
 

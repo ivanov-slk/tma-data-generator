@@ -32,6 +32,7 @@ func (dg *DataGenerator) GenerateData() ([]byte, error) {
 	s, _ := js.CreateStream(ctx, jetstream.StreamConfig{
 		Name:     "TMA",
 		Subjects: []string{"generated-data"},
+		Storage:  jetstream.MemoryStorage,
 	})
 
 	c, _ := s.CreateOrUpdateConsumer(ctx, jetstream.ConsumerConfig{
