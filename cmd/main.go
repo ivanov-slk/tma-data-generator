@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"log"
+	"log/slog"
 	"os"
 
 	"github.com/ivanov-slk/tma-data-generator/pkg/generator"
@@ -14,12 +15,14 @@ func main() {
 	log.Println("INFO: Initializing the data generator service...")
 	natsURI, found := os.LookupEnv("NATS_SERVER_URI")
 	if !found {
-		log.Fatal("ERROR: NATS server URI not set.")
+		slog.Error("NATS server URI not set.")
+		os.Exit(1)
 	}
 
 	nc, err := nats.Connect(natsURI)
 	if err != nil {
-		log.Fatalf("ERROR: failed to connect to nats server: %s", err)
+		slog.Error("failed to connect to nats server:", "error", err)
+		os.Exit(1)
 	}
 	defer nc.Close()
 
