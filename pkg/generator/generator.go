@@ -14,6 +14,12 @@ type TemperatureStats struct {
 }
 
 func Generate() TemperatureStats {
+	// TODO: next steps:
+	// temperature - random between 18 and 25
+	// humidity - random between 0 and 1
+	// pressure - random between 1000 and 1040
+	// datetime - always `now`
+	// id - constant, random string created on startup
 	timestamp, _ := time.Parse(time.RFC3339, "2024-01-04T16:27:40Z")
 	return TemperatureStats{15, 0.6, 1000, timestamp, "1"}
 }

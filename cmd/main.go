@@ -5,6 +5,7 @@ import (
 	"log"
 	"log/slog"
 	"os"
+	"time"
 
 	"github.com/ivanov-slk/tma-data-generator/pkg/generator"
 	"github.com/nats-io/nats.go"
@@ -35,13 +36,21 @@ func main() {
 		Subjects: []string{"generated-data"},
 		Storage:  jetstream.MemoryStorage,
 	})
-	log.Println("INFO: The data generator service initialized successfully.")
+	log.Println("INFO: The data generator service initialized successfully.") // TODO: can't use slog because of the test
 
-	byteStats, _ := generator.JsonizeTemperatureStats(generator.Generate()) // TODO error handling
+	for {
+		byteStats, err := generator.JsonizeTemperatureStats(generator.Generate())
+		if err != nil {
+			slog.Error("failed generating message bytes:", "error", err)
+		}
 
-	js.Publish(ctx, "generated-data", byteStats)
-	log.Println("INFO: Message produced.")
+		if nc.Status() != nats.CONNECTED {
+			continue
+		}
 
-	// Sleep forever to make ArgoCD happy.
-	select {}
+		if _, err := js.Publish(ctx, "generated-data", byteStats); err != nil {
+			slog.Error("failed publishing a message:", "error", err)
+		}
+		time.Sleep(60 * time.Second)
+	}
 }
