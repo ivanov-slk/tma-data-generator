@@ -2,46 +2,39 @@
 
 ## [1.2.0](https://github.com/ivanov-slk/tma-data-generator/compare/v1.1.2...v1.2.0) (2024-01-23)
 
-
 ### Maintenance
 
-* Update go version in actions. ([9d29f47](https://github.com/ivanov-slk/tma-data-generator/commit/9d29f47c39a8eab8fc1d2a84a91c6469aa45f1ea))
-
+- Update go version in actions. ([9d29f47](https://github.com/ivanov-slk/tma-data-generator/commit/9d29f47c39a8eab8fc1d2a84a91c6469aa45f1ea))
 
 ### Features
 
-* Producer now publishes the same message infinitely with 60-second interval. ([0da9ccb](https://github.com/ivanov-slk/tma-data-generator/commit/0da9ccbfadd34743f638a8a7fac7b8016ddb4907))
-
+- Producer now publishes the same message infinitely with 60-second interval. ([0da9ccb](https://github.com/ivanov-slk/tma-data-generator/commit/0da9ccbfadd34743f638a8a7fac7b8016ddb4907))
 
 ### Refactoring/Restructuring
 
-* Use  for logging throughout the service. ([c1a7f89](https://github.com/ivanov-slk/tma-data-generator/commit/c1a7f899f25307be7ee82cf060fbf55f620596d5))
+- Use `slog` for logging throughout the service. ([c1a7f89](https://github.com/ivanov-slk/tma-data-generator/commit/c1a7f899f25307be7ee82cf060fbf55f620596d5))
 
 ## [1.1.2](https://github.com/ivanov-slk/tma-data-generator/compare/v1.1.1...v1.1.2) (2024-01-13)
 
-
 ### Maintenance
 
-* Remove unneeded log messages. ([a6882eb](https://github.com/ivanov-slk/tma-data-generator/commit/a6882ebb943bf01bc9d569e4054553129ba05cd1))
-* Use jetstream.MemoryStorage when creating the stream. This is sufficient for the current purposes of the service. ([3d89447](https://github.com/ivanov-slk/tma-data-generator/commit/3d89447f63f1d13455306161dd782e46f228267a))
+- Remove unneeded log messages. ([a6882eb](https://github.com/ivanov-slk/tma-data-generator/commit/a6882ebb943bf01bc9d569e4054553129ba05cd1))
+- Use jetstream.MemoryStorage when creating the stream. This is sufficient for the current purposes of the service. ([3d89447](https://github.com/ivanov-slk/tma-data-generator/commit/3d89447f63f1d13455306161dd782e46f228267a))
 
 ## [1.1.1](https://github.com/ivanov-slk/tma-data-generator/compare/v1.1.0...v1.1.1) (2024-01-03)
 
-
 ### Documentation
 
-* Remove references to Kafka, as the service does not use it right now and generally will not be constrained to a specific pub/sub provider. ([191e737](https://github.com/ivanov-slk/tma-data-generator/commit/191e737bd6f1e962421f7df951e09bada64df0c7))
-
+- Remove references to Kafka, as the service does not use it right now and generally will not be constrained to a specific pub/sub provider. ([191e737](https://github.com/ivanov-slk/tma-data-generator/commit/191e737bd6f1e962421f7df951e09bada64df0c7))
 
 ### Refactoring/Restructuring
 
-* Make the  package public. ([97cb625](https://github.com/ivanov-slk/tma-data-generator/commit/97cb6251dce2d31d9917668d59006b1518ee6174))
-* Make the data generator utilities public. ([9239145](https://github.com/ivanov-slk/tma-data-generator/commit/92391452dc6f473e7f52b999ba4aedd0b5ee217c))
-
+- Make the package public. ([97cb625](https://github.com/ivanov-slk/tma-data-generator/commit/97cb6251dce2d31d9917668d59006b1518ee6174))
+- Make the data generator utilities public. ([9239145](https://github.com/ivanov-slk/tma-data-generator/commit/92391452dc6f473e7f52b999ba4aedd0b5ee217c))
 
 ### Testing
 
-* Fix typos in the datetimes used for testing. ([f347299](https://github.com/ivanov-slk/tma-data-generator/commit/f34729912c61ce6167bfd2cd89ab8a8d7a30bdb5))
+- Fix typos in the datetimes used for testing. ([f347299](https://github.com/ivanov-slk/tma-data-generator/commit/f34729912c61ce6167bfd2cd89ab8a8d7a30bdb5))
 
 ## [1.1.0](https://github.com/ivanov-slk/tma-data-generator/compare/v1.0.1...v1.1.0) (2024-01-03)
 
