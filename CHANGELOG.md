@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.2.0](https://github.com/ivanov-slk/tma-data-generator/compare/v1.1.2...v1.2.0) (2024-01-23)
+
+
+### Maintenance
+
+* Update go version in actions. ([9d29f47](https://github.com/ivanov-slk/tma-data-generator/commit/9d29f47c39a8eab8fc1d2a84a91c6469aa45f1ea))
+
+
+### Features
+
+* Producer now publishes the same message infinitely with 60-second interval. ([0da9ccb](https://github.com/ivanov-slk/tma-data-generator/commit/0da9ccbfadd34743f638a8a7fac7b8016ddb4907))
+
+
+### Refactoring/Restructuring
+
+* Use  for logging throughout the service. ([c1a7f89](https://github.com/ivanov-slk/tma-data-generator/commit/c1a7f899f25307be7ee82cf060fbf55f620596d5))
+
 ## [1.1.2](https://github.com/ivanov-slk/tma-data-generator/compare/v1.1.1...v1.1.2) (2024-01-13)
 
 
