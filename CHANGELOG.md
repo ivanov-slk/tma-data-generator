@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.2](https://github.com/ivanov-slk/tma-data-generator/compare/v1.1.1...v1.1.2) (2024-01-13)
+
+
+### Maintenance
+
+* Remove unneeded log messages. ([a6882eb](https://github.com/ivanov-slk/tma-data-generator/commit/a6882ebb943bf01bc9d569e4054553129ba05cd1))
+* Use jetstream.MemoryStorage when creating the stream. This is sufficient for the current purposes of the service. ([3d89447](https://github.com/ivanov-slk/tma-data-generator/commit/3d89447f63f1d13455306161dd782e46f228267a))
+
 ## [1.1.1](https://github.com/ivanov-slk/tma-data-generator/compare/v1.1.0...v1.1.1) (2024-01-03)
 
 
