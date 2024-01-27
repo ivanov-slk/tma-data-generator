@@ -2,8 +2,13 @@ package generator
 
 import (
 	"encoding/json"
+	"math/rand"
 	"time"
+
+	"github.com/google/uuid"
 )
+
+var id string = uuid.New().String()
 
 type TemperatureStats struct {
 	Temperature int       `json:"temperature"`
@@ -14,14 +19,8 @@ type TemperatureStats struct {
 }
 
 func Generate() TemperatureStats {
-	// TODO: next steps:
-	// temperature - random between 18 and 25
-	// humidity - random between 0 and 1
-	// pressure - random between 1000 and 1040
-	// datetime - always `now`
 	// id - constant, random string created on startup
-	timestamp, _ := time.Parse(time.RFC3339, "2024-01-04T16:27:40Z")
-	return TemperatureStats{15, 0.6, 1000, timestamp, "1"}
+	return TemperatureStats{rand.Intn(10) + 15, rand.Float32(), rand.Intn(40) + 1000, time.Now(), id}
 }
 
 func JsonizeTemperatureStats(stats TemperatureStats) ([]byte, error) {
