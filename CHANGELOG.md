@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/ivanov-slk/tma-data-generator/compare/v1.2.0...v1.3.0) (2024-01-27)
+
+
+### Features
+
+* The generator function now returns random temperature stats within pre-specified ranges. ([28dc46e](https://github.com/ivanov-slk/tma-data-generator/commit/28dc46ec78382bf55e126c3a7495d0bd662cecde))
+
 ## [1.2.0](https://github.com/ivanov-slk/tma-data-generator/compare/v1.1.2...v1.2.0) (2024-01-23)
 
 ### Maintenance
